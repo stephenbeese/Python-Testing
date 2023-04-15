@@ -7,8 +7,22 @@ def even_number_of_evens(numbers):
     if the number of even numbers is 0, return False
     if the number of even numbers is even, return True
     """
+    if isinstance(numbers, list):
+        if numbers == []:
+            return False
+        else:
+            evens = 0
 
-    return None
+        for n in numbers:
+            if n % 2 == 0:
+                evens += 1
+
+        if evens:
+            return evens % 2 == 0
+        else:
+            return False
+    else:
+        raise TypeError("The parameter passed in is not a list")
 
 
 if __name__ == '__main__':
